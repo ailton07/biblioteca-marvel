@@ -3,8 +3,8 @@ package com.example.ailtonfh.bibliotecamarvel.api;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.example.ailtonfh.bibliotecamarvel.R;
-import com.example.ailtonfh.bibliotecamarvel.models.Models;
+import com.example.ailtonfh.bibliotecamarvel.comicsModels.ComicsModel;
+import com.example.ailtonfh.bibliotecamarvel.heroesModels.Models;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -20,7 +20,8 @@ public class APIClient {
     private ApiEndpointInterface apiService;
     private Retrofit retrofit;
 
-    private GetHeroesDelegate delegate;
+    private GetHeroesDelegate heroesDelegate;
+    private GetComicsDelegate comicsDelegate;
 
     public ApiEndpointInterface getApiService() {
         return apiService;
@@ -34,8 +35,9 @@ public class APIClient {
                 .build();
     }
 
-    public APIClient(GetHeroesDelegate delegate) {
-        this.delegate = delegate;
+    // Heroes
+    public APIClient(GetHeroesDelegate heroesDelegate) {
+        this.heroesDelegate = heroesDelegate;
 
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -43,7 +45,8 @@ public class APIClient {
                 .build();
     }
 
-    public Call getCharacters(){
+
+    public Call getAPICharacters(){
 
         apiService = retrofit.create(ApiEndpointInterface.class);
 
@@ -59,27 +62,24 @@ public class APIClient {
 
         apiService = retrofit.create(ApiEndpointInterface.class);
 
-        AuthenticationAPI aut = new AuthenticationAPI();
-        aut.timeStampReload();
-
-        Call<Models> call = getCharacters();
+        Call<Models> call = getAPICharacters();
 
         call.enqueue(new Callback<Models>() {
             @Override
             public void onResponse(Call<Models> call, Response<Models> response) {
                 if (response.isSuccessful()) {
 
-                    delegate.manageHeroes(response);
+                    heroesDelegate.manageHeroes(response);
                 }
                 else {
 
-                    delegate.manageHeroesError(response);
+                    heroesDelegate.manageHeroesError(response);
 
                 }
             }
             @Override
             public void onFailure(Call<Models> call, Throwable t) {
-                Log.e("API Error", t.getMessage());
+//                Log.e("API Error", t.getMessage());
 
             }
 
@@ -93,6 +93,60 @@ public class APIClient {
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+    }
+
+// Comics
+
+    public APIClient(GetComicsDelegate comicsDelegate) {
+        this.comicsDelegate = comicsDelegate;
+
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+    }
+
+    public Call getAPIComics(String charId){
+
+        apiService = retrofit.create(ApiEndpointInterface.class);
+
+        AuthenticationAPI aut = new AuthenticationAPI();
+        aut.timeStampReload();
+        Call<ComicsModel> call = apiService.getCharacterComics(charId, aut.getTimeStamp(), aut.getPublicKey(), aut.getHash(), "10");
+
+        return call;
+
+    }
+
+    public void getComics(String charId){
+
+        apiService = retrofit.create(ApiEndpointInterface.class);
+
+        Call<ComicsModel> call = getAPIComics(charId);
+
+        call.enqueue(new Callback<ComicsModel>() {
+            @Override
+            public void onResponse(Call<ComicsModel> call, Response<ComicsModel> response) {
+
+                if (response.isSuccessful()) {
+
+                    comicsDelegate.manageComics(response);
+                }
+                else {
+
+                    comicsDelegate.manageComicsError(response);
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ComicsModel> call, Throwable t) {
+              //  Log.e("API Error", t.getMessage());
+
+            }
+
+        });
+
     }
 
 

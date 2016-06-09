@@ -1,5 +1,5 @@
 
-package com.example.ailtonfh.bibliotecamarvel.models;
+package com.example.ailtonfh.bibliotecamarvel.heroesModels;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,11 +8,11 @@ import java.util.Map;
 import javax.annotation.Generated;
 
 @Generated("org.jsonschema2pojo")
-public class Series {
+public class Comics {
 
     private Integer available;
     private String collectionURI;
-    private List<Item_> items = new ArrayList<Item_>();
+    private List<Item> items = new ArrayList<Item>();
     private Integer returned;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -57,7 +57,7 @@ public class Series {
      * @return
      *     The items
      */
-    public List<Item_> getItems() {
+    public List<Item> getItems() {
         return items;
     }
 
@@ -66,7 +66,7 @@ public class Series {
      * @param items
      *     The items
      */
-    public void setItems(List<Item_> items) {
+    public void setItems(List<Item> items) {
         this.items = items;
     }
 

@@ -1,8 +1,6 @@
 package com.example.ailtonfh.bibliotecamarvel.api;
 
-import com.example.ailtonfh.bibliotecamarvel.models.Models;
-
-import java.util.List;
+import com.example.ailtonfh.bibliotecamarvel.heroesModels.Models;
 
 import retrofit2.Response;
 

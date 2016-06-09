@@ -1,15 +1,16 @@
 
-package com.example.ailtonfh.bibliotecamarvel.models;
+package com.example.ailtonfh.bibliotecamarvel.heroesModels;
 
 import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Generated;
 
 @Generated("org.jsonschema2pojo")
-public class Item___ {
+public class Item__ {
 
     private String resourceURI;
     private String name;
+    private String type;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
@@ -46,6 +47,24 @@ public class Item___ {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * 
+     * @return
+     *     The type
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * 
+     * @param type
+     *     The type
+     */
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Map<String, Object> getAdditionalProperties() {

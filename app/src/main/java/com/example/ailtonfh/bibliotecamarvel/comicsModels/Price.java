@@ -1,51 +1,51 @@
 
-package com.example.ailtonfh.bibliotecamarvel.models;
+package com.example.ailtonfh.bibliotecamarvel.comicsModels;
 
 import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Generated;
 
 @Generated("org.jsonschema2pojo")
-public class Thumbnail {
+public class Price {
 
-    private String path;
-    private String extension;
+    private String type;
+    private Double price;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * 
      * @return
-     *     The path
+     *     The type
      */
-    public String getPath() {
-        return path;
+    public String getType() {
+        return type;
     }
 
     /**
      * 
-     * @param path
-     *     The path
+     * @param type
+     *     The type
      */
-    public void setPath(String path) {
-        this.path = path;
+    public void setType(String type) {
+        this.type = type;
     }
 
     /**
      * 
      * @return
-     *     The extension
+     *     The price
      */
-    public String getExtension() {
-        return extension;
+    public Double getPrice() {
+        return price;
     }
 
     /**
      * 
-     * @param extension
-     *     The extension
+     * @param price
+     *     The price
      */
-    public void setExtension(String extension) {
-        this.extension = extension;
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     public Map<String, Object> getAdditionalProperties() {

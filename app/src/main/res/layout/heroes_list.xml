@@ -1,24 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:paddingBottom="0dp"
+        android:scrollIndicators="right">
 
     <ImageView
         android:id="@+id/heroes_list_imagem"
         android:layout_width="364dp"
-        android:layout_height="261dp" />
+        android:layout_height="261dp"
+        android:padding="0dp" />
 
 
 
         <TextView
             android:id="@+id/heroes_list_nome"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignRight= "@+id/heroes_list_imagem"
             android:layout_alignEnd="@+id/heroes_list_imagem"
             android:text="Titulo"
+            android:layout_marginTop="-70dp"
+            android:textColorHighlight="@android:color/black"
+            android:background="@drawable/back"
             android:textSize="25dp" />
 
+    </LinearLayout>
 
 
-</RelativeLayout>
+

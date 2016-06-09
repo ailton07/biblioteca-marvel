@@ -1,15 +1,15 @@
 
-package com.example.ailtonfh.bibliotecamarvel.models;
+package com.example.ailtonfh.bibliotecamarvel.comicsModels;
 
 import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Generated;
 
 @Generated("org.jsonschema2pojo")
-public class Url {
+public class Date {
 
     private String type;
-    private String url;
+    private String date;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
@@ -33,19 +33,19 @@ public class Url {
     /**
      * 
      * @return
-     *     The url
+     *     The date
      */
-    public String getUrl() {
-        return url;
+    public String getDate() {
+        return date;
     }
 
     /**
      * 
-     * @param url
-     *     The url
+     * @param date
+     *     The date
      */
-    public void setUrl(String url) {
-        this.url = url;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public Map<String, Object> getAdditionalProperties() {

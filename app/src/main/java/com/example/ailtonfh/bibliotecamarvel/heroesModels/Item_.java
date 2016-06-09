@@ -1,5 +1,5 @@
 
-package com.example.ailtonfh.bibliotecamarvel.models;
+package com.example.ailtonfh.bibliotecamarvel.heroesModels;
 
 import java.util.HashMap;
 import java.util.Map;

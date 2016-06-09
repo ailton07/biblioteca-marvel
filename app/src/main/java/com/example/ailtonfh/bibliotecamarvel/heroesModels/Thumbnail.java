@@ -1,51 +1,51 @@
 
-package com.example.ailtonfh.bibliotecamarvel.models;
+package com.example.ailtonfh.bibliotecamarvel.heroesModels;
 
 import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Generated;
 
 @Generated("org.jsonschema2pojo")
-public class Item {
+public class Thumbnail {
 
-    private String resourceURI;
-    private String name;
+    private String path;
+    private String extension;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * 
      * @return
-     *     The resourceURI
+     *     The path
      */
-    public String getResourceURI() {
-        return resourceURI;
+    public String getPath() {
+        return path;
     }
 
     /**
      * 
-     * @param resourceURI
-     *     The resourceURI
+     * @param path
+     *     The path
      */
-    public void setResourceURI(String resourceURI) {
-        this.resourceURI = resourceURI;
+    public void setPath(String path) {
+        this.path = path;
     }
 
     /**
      * 
      * @return
-     *     The name
+     *     The extension
      */
-    public String getName() {
-        return name;
+    public String getExtension() {
+        return extension;
     }
 
     /**
      * 
-     * @param name
-     *     The name
+     * @param extension
+     *     The extension
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setExtension(String extension) {
+        this.extension = extension;
     }
 
     public Map<String, Object> getAdditionalProperties() {

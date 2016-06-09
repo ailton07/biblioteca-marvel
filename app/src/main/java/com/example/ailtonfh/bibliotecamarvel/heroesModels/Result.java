@@ -1,5 +1,7 @@
 
-package com.example.ailtonfh.bibliotecamarvel.models;
+package com.example.ailtonfh.bibliotecamarvel.heroesModels;
+
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,6 +25,14 @@ public class Result {
     private List<Url> urls = new ArrayList<Url>();
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
+    public String toJson() {
+        Gson gson = new Gson();
+        return gson.toJson(this);
+    }
+    public static Result fromJson(String json) {
+        Gson gson = new Gson();
+        return gson.fromJson(json, Result.class);
+    }
     /**
      * 
      * @return

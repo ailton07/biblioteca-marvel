@@ -1,5 +1,5 @@
 
-package com.example.ailtonfh.bibliotecamarvel.models;
+package com.example.ailtonfh.bibliotecamarvel.comicsModels;
 
 import java.util.ArrayList;
 import java.util.HashMap;

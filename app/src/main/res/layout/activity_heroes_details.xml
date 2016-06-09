@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+
+    tools:context=".HeroesDetailsActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollIndicators="right">
+
+        <ImageView
+            android:id="@+id/heroes_imagem"
+            android:layout_marginTop="-20dp"
+            android:layout_width="364dp"
+            android:layout_height="261dp" />
+        <TextView
+            android:id="@+id/heroes_nome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="-80dp"
+            android:layout_alignRight= "@+id/heroes_imagem"
+            android:layout_alignEnd="@+id/heroes_imagem"
+            android:text="Titulo"
+            android:textColorHighlight="@android:color/black"
+            android:background="@drawable/back"
+            android:textSize="35dp" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_description"
+                android:textSize="14dp"
+                android:layout_marginTop="2dp"
+                android:id="@+id/heroes_descricao" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/comics"
+                android:textSize="20dp"
+                android:layout_marginTop="00dp"
+                android:id="@+id/heroes_comics" />
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/listViewComics"
+                android:nestedScrollingEnabled="false"
+                android:footerDividersEnabled="false" />
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

@@ -1,6 +1,7 @@
 package com.example.ailtonfh.bibliotecamarvel;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,20 +12,20 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
+
 
 import com.example.ailtonfh.bibliotecamarvel.api.APIClient;
 import com.example.ailtonfh.bibliotecamarvel.api.GetHeroesDelegate;
-import com.example.ailtonfh.bibliotecamarvel.models.Models;
-import com.example.ailtonfh.bibliotecamarvel.models.Result;
+import com.example.ailtonfh.bibliotecamarvel.heroesModels.Models;
+import com.example.ailtonfh.bibliotecamarvel.heroesModels.Result;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 
 
@@ -42,12 +43,29 @@ public class MainActivity extends AppCompatActivity implements GetHeroesDelegate
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
+
+        ListView heroesListView = (ListView) findViewById(R.id.listView);
+        heroesListView.setOnItemClickListener(new OnItemClickListener(){
+
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Result item = (Result) parent.getItemAtPosition(position);
+
+                Intent intent = new Intent(MainActivity.this, HeroesDetailsActivity.class);
+
+                String resultAsJson = item.toJson();
+                intent.putExtra("result", resultAsJson);
+
+                startActivity(intent);
+
             }
         });
 

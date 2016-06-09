@@ -36,10 +36,13 @@ Screenshots
 -------------
  
 Tela Inicial
- ![Initial Screen](http://i.imgur.com/6Ck8wa6.png?1)
+ 
+![Initial Screen](http://i.imgur.com/6Ck8wa6.png?1)
 
 Busca
+
 ![Search Screen](http://i.imgur.com/k76RmEN.png?1)
 
 Tela de detalhes
+
 ![Details Screen](http://i.imgur.com/6lSqkXp.png?1)

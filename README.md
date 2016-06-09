@@ -1,9 +1,9 @@
 Biblioteca Marvel
 ===================
 
-Aplicação Android que consume a Marvel API (disponível  <i class="icon-link"></i>[aqui](http://developer.marvel.com/) )
+Aplicação Android que consome a Marvel API (disponível  <i class="icon-link"></i>[aqui](http://developer.marvel.com/) )
 
-----------
+
 ##Funcionalidades
 
 ###Listagem de Heróis
@@ -35,8 +35,11 @@ static public String publicKey = "";
 Screenshots
 -------------
  
+Tela Inicial
  ![Initial Screen](http://i.imgur.com/6Ck8wa6.png?1)
 
+Busca
 ![Search Screen](http://i.imgur.com/k76RmEN.png?1)
 
+Tela de detalhes
 ![Details Screen](http://i.imgur.com/6lSqkXp.png?1)

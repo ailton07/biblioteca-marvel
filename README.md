@@ -37,7 +37,7 @@ Screenshots
  
 Tela Inicial
  
-![Initial Screen](http://i.imgur.com/6Ck8wa6.png?1)
+![Initial Screen](http://i.imgur.com/gscVQCg.png?1)
 
 Busca
 

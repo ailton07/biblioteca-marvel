@@ -110,14 +110,11 @@ public class HeroesDetailsActivity extends AppCompatActivity implements GetComic
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setView(dialogLayout);
 
-
-
                 dialog.show();
 
 
             }
         });
-
 
     }
 
